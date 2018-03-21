@@ -215,7 +215,7 @@ def problem1a(a, b, threshold):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement at least 4 tests of the problem1b function.
+    # DONE: 4. Implement at least 4 tests of the problem1b function.
     #   Note that you CANNOT use  problem1b(1)  or  problem1b(2)  as tests, per
     #   the specification below that says that the argument must be at least 3.
     # -------------------------------------------------------------------------
@@ -245,6 +245,14 @@ def run_test_problem1b():
     answer = problem1b(5)
     print()
     print('Test 3 is: problem1b()')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 4:
+    expected = 4 + 10 + 11 + 12 + 13 + 14
+    answer = problem1b(4)
+    print()
+    print('Test 4 is: problem1b()')
     print('  Expected:', expected)
     print('  Actual:  ', answer)
 
