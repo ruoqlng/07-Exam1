@@ -2,8 +2,8 @@
 Exam 1, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  March 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and ruoqing.  March 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the   product_of_digits   function below.
+# DONE: 2.  READ the doc-string for the   product_of_digits   function below.
 #           Ask your instructor for help if you do not understand it.
 #
 #   Once you are confident that you understand the doc-string
@@ -195,8 +195,14 @@ def problem1a(a, b, threshold):
       -- problem1a(109, 139, 3)
               returns 109 + 110 + 111 + 112 + 120 + 121 + 130,  which is 813
     """
+    total = 0
+    for k in range(b - a + 1):
+        if product_of_digits(a + k) < threshold:
+            total = total + a + k
+    return total
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT NOTE
@@ -218,6 +224,30 @@ def run_test_problem1b():
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
 
+    # Test 1:
+    expected = 682
+    answer = problem1b(8)
+    print()
+    print('Test 1 is: problem1b()')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 2:
+    expected = 3
+    answer = problem1b(3)
+    print()
+    print('Test 2 is: problem1b()')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 3:
+    expected = 5 + 10 + 11 + 12 + 13 + 14 + 15 + 20 + 21 + 22
+    answer = problem1b(5)
+    print()
+    print('Test 3 is: problem1b()')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
 
 ###############################################################################
 # IMPORTANT note: in the following problem,
@@ -238,8 +268,14 @@ def problem1b(r):
     8 10 11 12 13 14 15 16 17 18  20 21 22 23 24  30 31 32 40 41 42 50 51 60 61
            and the sum of the above numbers is 682
     """
+    sum = 0
+    for k in range ((r ** 2) - r):
+        if product_of_digits(r + k) <= r:
+            sum = sum + r + k
+    return sum
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          See the IMPORTANT NOTE just before the DEF above.
     # -------------------------------------------------------------------------
 
